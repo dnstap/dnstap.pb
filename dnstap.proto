@@ -38,6 +38,12 @@ message Dnstap {
     // the payload. No encoding or interpretation is applied or enforced.
     optional bytes      extra = 3;
 
+    // Unique session id
+    // If enabled, this is uniq string for all resolution tasks.
+    // This field is very useful for matching all DNS requests related to particular
+    // domain resolution session
+    optional bytes      session = 4;
+
     // Identifies which field below is filled in.
     enum Type {
         MESSAGE = 1;
