@@ -56,11 +56,12 @@ enum SocketFamily {
     INET6 = 2;  // IPv6 (RFC 2460)
 }
 
-// SocketProtocol: the transport protocol of a socket. This specifies how to
-// interpret "transport port" fields.
+// SocketProtocol: the protocol used to transport a DNS message.
 enum SocketProtocol {
-    UDP = 1;    // User Datagram Protocol (RFC 768)
-    TCP = 2;    // Transmission Control Protocol (RFC 793)
+    UDP = 1;    // DNS over UDP transport (RFC 1035 section 4.2.1)
+    TCP = 2;    // DNS over TCP transport (RFC 1035 section 4.2.2)
+    DOT = 3;    // DNS over TLS (RFC 7858)
+    DOH = 4;    // DNS over HTTPS (RFC 8484)
 }
 
 // Message: a wire-format (RFC 1035 section 4) DNS message and associated
